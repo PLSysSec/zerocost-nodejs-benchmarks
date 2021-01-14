@@ -20,13 +20,13 @@
 # Installing
 
 ```
-npm i -g fastify-benchmarks
+npm i 
 ```
 
 # Usage
 
 ```
-benchmark [arguments (optional)]
+./benchmark.js [arguments (optional)]
 ```
 
 #### Arguments
