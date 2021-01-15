@@ -4,7 +4,8 @@ const assert = require('assert')
 const Trek = require('trek-engine')
 
 const app = new Trek()
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 app.use(async function ({ res }) {
   res.body = { hello: 'world' }
 })

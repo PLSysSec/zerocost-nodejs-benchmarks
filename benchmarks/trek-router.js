@@ -6,7 +6,8 @@ const Router = require('trek-router')
 
 const app = new Trek()
 const router = new Router()
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 router.add('GET', '/', async function ({ res }) {
   res.body = { hello: 'world' }
 })

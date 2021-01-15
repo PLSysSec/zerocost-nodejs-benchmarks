@@ -7,5 +7,6 @@ const app = restana()
 app.get('/', (req, res) => {
   res.send({ hello: 'world' })
 })
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 app.start(3000)

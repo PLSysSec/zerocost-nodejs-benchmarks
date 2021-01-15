@@ -25,5 +25,6 @@ app.get('/', { schema }, (req, res) => {
   res.setHeader('content-type', 'application/json; charset=utf-8')
   res.json({ hello: 'world' })
 })
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 app.start()

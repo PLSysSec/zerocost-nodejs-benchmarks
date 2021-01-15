@@ -24,5 +24,6 @@ async function start () {
 
   await server.start()
 }
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 start()
