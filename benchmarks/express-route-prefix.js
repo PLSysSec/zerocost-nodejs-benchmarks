@@ -12,6 +12,7 @@ const router = express.Router()
 router.get('/hello', function (req, res) {
   res.json({ hello: 'world' })
 })
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 app.use('/greet', router)
 app.listen(3000)

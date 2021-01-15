@@ -20,5 +20,6 @@ const schema = {
 fastify.get('/', schema, function (req, reply) {
   reply.send({ hello: 'world' })
 })
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 fastify.listen(3000)

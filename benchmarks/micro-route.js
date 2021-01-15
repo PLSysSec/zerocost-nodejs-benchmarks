@@ -8,5 +8,6 @@ const handler = (req, res) => micro.send(res, 200, { hello: 'world' })
 const server = micro(
   dispatch('/', 'GET', handler)
 )
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 server.listen(3000)

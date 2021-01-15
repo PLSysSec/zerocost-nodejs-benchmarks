@@ -39,5 +39,6 @@ fastify.get('/', opts, function (request, reply) {
 
   reply.send(jobs)
 })
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 fastify.listen(3000)

@@ -1,3 +1,5 @@
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 require('http')
   .createServer(
     require('server-base-router')({

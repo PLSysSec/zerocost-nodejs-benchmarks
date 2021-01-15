@@ -11,5 +11,6 @@ const server = micro(
     get('/', hello)
   )
 )
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 server.listen(3000)

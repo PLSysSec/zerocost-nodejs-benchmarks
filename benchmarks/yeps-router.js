@@ -13,5 +13,6 @@ router.get('/').then(async (ctx) => {
 })
 
 app.then(router.resolve())
-
+require('events').EventEmitter.defaultMaxListeners = 100;
+process.setMaxListeners(0);
 http.createServer(app.resolve()).listen(3000)
